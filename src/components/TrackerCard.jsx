@@ -4,16 +4,19 @@ import { ReactComponent as Dots } from '../images/icon-ellipsis.svg';
 
 export default function TrackerCard(props) {
   const settings = cardsSettings[props.title];
-
-  console.log(settings);
   return (
     <div
-      className={`sm:w-64 rounded-xl text-white flex flex-col overflow-hidden ${settings.className}`}
+      className={`sm:w-64 rounded-xl text-white flex flex-col overflow-hidden`}
     >
-      <div className='max-h-[3rem] flex justify-end px-4 -mt-2'>
+      <div
+        className={`
+        h-20 flex justify-end px-4 -mt-2
+        ${settings.className}
+      `}
+      >
         {settings.image}
       </div>
-      <div className='h-48 bg-dark-blue flex-1 rounded-xl p-6 grid gap-4'>
+      <div className='h-48 -mt-8 bg-dark-blue flex-1 rounded-xl p-6 grid gap-4'>
         <div className='flex justify-between'>
           <span className='text-lg font-[500]'>{props.title}</span>
           <span className='p-2 text-lg'>
